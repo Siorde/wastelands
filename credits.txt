@@ -1,7 +1,7 @@
 Base concept, common textures, some sounds and mapgen ideas
 https://content.minetest.net/packages/Wuzzy/hades_revisited/
 
-Water and lava textures
+Lava textures
 https://content.minetest.net/packages/MysticTempest/refi_textures/
 
 Inventory
