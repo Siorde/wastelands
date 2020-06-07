@@ -1,2 +1,2 @@
 # wastelands
-Mod Mintest
+Mod Minetest
