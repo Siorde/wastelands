@@ -6,3 +6,9 @@ https://content.minetest.net/packages/MysticTempest/refi_textures/
 
 Inventory
 https://content.minetest.net/packages/RealBadAngel/unified_inventory/
+
+Icon
+https://opengameart.org/content/lava-potion
+
+Title
+https://opengameart.org/content/lava-texture
