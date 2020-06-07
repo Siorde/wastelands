@@ -167,25 +167,3 @@ minetest.register_node("hades_nodes:fertile_sand", {
 	groups = {crumbly=3, falling_node=1, sand=1, porous=1},
 	sounds = default.node_sound_sand_defaults(),
 })
-
-minetest.register_node("hades_nodes:gravel_volcanic", {
-	description = "Volcanic Gravel",
-	tiles = {"default_gravel_volcanic.png"},
-	is_ground_content = true,
-	groups = {crumbly=1, porous=1},
-	sounds = default.node_sound_dirt_defaults({
-		footstep = {name="default_gravel_footstep", gain=0.5},
-		dug = {name="default_gravel_footstep", gain=1.0},
-	}),
-})
-
-minetest.register_node("hades_nodes:gravel_volcanic_block", {
-	description = "Volcanic Gravel Block",
-	tiles = {"default_gravel_volcanic_block.png"},
-	is_ground_content = false,
-	groups = {crumbly=2},
-	sounds = default.node_sound_dirt_defaults({
-		footstep = {name="default_gravel_footstep", gain=0.5},
-		dug = {name="default_gravel_footstep", gain=1.0},
-	}),
-})
