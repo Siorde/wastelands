@@ -3,10 +3,9 @@
 -- Those aliases replace classic map generation nodes with ash, cobble, stone, tuff and lava
 --
 
-
 -- TODO : retirer les définitions de lava et water de hades_nodes, et remplacer les usages par les versions default, idem pour stone et compagnie (tout ce qui se trouve en default)
 minetest.register_alias("mapgen_air", "air")
-minetest.register_alias("mapgen_stone", "hades_nodes:stone")
+minetest.register_alias("mapgen_stone", "default:stone")
 minetest.register_alias("mapgen_dirt", "hades_nodes:ash")
 minetest.register_alias("mapgen_dirt_with_grass", "hades_nodes:ash")
 minetest.register_alias("mapgen_sand", "hades_nodes:ash")
@@ -14,12 +13,12 @@ minetest.register_alias("mapgen_water_source", "default:lava_source")
 minetest.register_alias("mapgen_river_water_source", "default:lava_source")
 minetest.register_alias("mapgen_lava_source", "default:lava_source")
 minetest.register_alias("mapgen_gravel", "default:lava_source")
-minetest.register_alias("mapgen_desert_stone", "hades_nodes:stone")
+minetest.register_alias("mapgen_desert_stone", "default:stone")
 minetest.register_alias("mapgen_desert_sand", "hades_nodes:ash")
 minetest.register_alias("mapgen_dirt_with_snow", "hades_nodes:ash")
 minetest.register_alias("mapgen_snowblock", "hades_nodes:ash")
 minetest.register_alias("mapgen_snow", "hades_nodes:ash")
-minetest.register_alias("mapgen_ice", "hades_nodes:stone")
+minetest.register_alias("mapgen_ice", "default:stone")
 minetest.register_alias("mapgen_sandstone", "hades_nodes:tuff")
 
 --
@@ -27,7 +26,7 @@ minetest.register_alias("mapgen_sandstone", "hades_nodes:tuff")
 --
 
 minetest.set_mapgen_setting("mg_name", "v7")
-minetest.set_mapgen_setting("mg_flags", "nodungeons, nodecorations, nobiomes, floatlands")
+minetest.set_mapgen_setting("mg_flags", "nodungeons, nodecorations, nobiomes, nofloatlands")
 
 --
 -- Lava and water generation
@@ -37,7 +36,7 @@ minetest.register_ore({
 	ore            = "default:water_source", -- water
 	ore_type       = "scatter",
 	ore_param2     = 128,
-	wherein        = "hades_nodes:stone",
+	wherein        = "default:stone",
 	clust_scarcity = 50*50*50, -- infrequent and medium sized
 	clust_num_ores = 10,
 	clust_size     = 4,
@@ -48,7 +47,7 @@ minetest.register_ore({
 minetest.register_ore({
 	ore              = "default:lava_source", -- lava
 	ore_type         = "blob",
-	wherein          = {"hades_nodes:stone"},
+	wherein          = {"default:stone"},
 	clust_scarcity   = 25*25*25, -- frequent and medium sized
 	clust_size       = 10,
 	y_min            = -30000,
@@ -67,7 +66,7 @@ minetest.register_ore({
 minetest.register_ore({
 	ore              = "default:lava_source", -- lava
 	ore_type         = "blob",
-	wherein          = {"hades_nodes:stone"},
+	wherein          = {"default:stone"},
 	clust_scarcity   = 50*50*50, -- infrequent and small sized
 	clust_size       = 5,
 	y_min            = -10, -- above Y=0
@@ -88,9 +87,9 @@ minetest.register_ore({
 --
 
 minetest.register_decoration({
-	decoration = "hades_nodes:stone", -- stone
+	decoration = "default:stone", -- stone
 	deco_type = "simple",
-	place_on = {"hades_nodes:stone"},
+	place_on = {"default:stone"},
 	sidelen = 16,
 	noise_params = {
 		offset = 0.01,
@@ -109,7 +108,7 @@ minetest.register_decoration({
 minetest.register_decoration({
 	decoration = "hades_nodes:ash", -- ash
 	deco_type = "simple",
-	place_on = {"hades_nodes:stone"},
+	place_on = {"default:stone"},
 	sidelen = 16,
 	noise_params = {
 		offset = 0.5,
@@ -130,7 +129,7 @@ minetest.register_decoration({
 minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "hades_nodes:ash",
-	wherein        = "hades_nodes:stone",
+	wherein        = "default:stone",
 	clust_scarcity = 20*20*20,
 	clust_num_ores = 5*5*3,
 	clust_size     = 5,
@@ -143,7 +142,7 @@ minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "hades_nodes:tuff",
 	ore_param2     = 128,
-	wherein        = "hades_nodes:stone",
+	wherein        = "default:stone",
 	clust_scarcity = 25*25*25,
 	clust_num_ores = 10000,
 	clust_size     = 12,
@@ -155,7 +154,7 @@ minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "hades_nodes:chondrite",
 	ore_param2     = 128,
-	wherein        = "hades_nodes:stone",
+	wherein        = "default:stone",
 	clust_scarcity = 10*10*10,
 	clust_num_ores = 50,
 	clust_size     = 10,
@@ -168,7 +167,7 @@ minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "hades_nodes:chondrite",
 	ore_param2     = 128,
-	wherein        = "hades_nodes:stone",
+	wherein        = "default:stone",
 	clust_scarcity = 20*20*20,
 	clust_num_ores = 550,
 	clust_size     = 10,
@@ -181,7 +180,7 @@ minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "hades_nodes:chondrite",
 	ore_param2     = 128,
-	wherein        = "hades_nodes:stone",
+	wherein        = "default:stone",
 	clust_scarcity = 20*20*20,
 	clust_num_ores = 650,
 	clust_size     = 10,
@@ -194,7 +193,7 @@ minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "hades_nodes:essexite",
 	ore_param2     = 128,
-	wherein        = "hades_nodes:stone",
+	wherein        = "default:stone",
 	clust_scarcity = 10*10*10,
 	clust_num_ores = 50,
 	clust_size     = 5,
@@ -206,7 +205,7 @@ minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "hades_nodes:essexite",
 	ore_param2     = 128,
-	wherein        = "hades_nodes:stone",
+	wherein        = "default:stone",
 	clust_scarcity = 10*10*10,
 	clust_num_ores = 500,
 	clust_size     = 10,
@@ -219,7 +218,7 @@ minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "hades_nodes:essexite",
 	ore_param2     = 128,
-	wherein        = "hades_nodes:stone",
+	wherein        = "default:stone",
 	clust_scarcity = 20*10*20,
 	clust_num_ores = 950,
 	clust_size     = 10,
@@ -230,9 +229,9 @@ minetest.register_ore({
 
 minetest.register_ore({
 	ore_type       = "scatter",
-	ore            = "hades_nodes:gravel",
+	ore            = "default:gravel",
 	ore_param2     = 128,
-	wherein        = "hades_nodes:stone",
+	wherein        = "default:stone",
 	clust_scarcity = 20*5*20,
 	clust_num_ores = 150,
 	clust_size     = 10,
@@ -242,9 +241,9 @@ minetest.register_ore({
 
 minetest.register_ore({
 	ore_type       = "scatter",
-	ore            = "hades_nodes:gravel",
+	ore            = "default:gravel",
 	ore_param2     = 128,
-	wherein        = "hades_nodes:stone",
+	wherein        = "default:stone",
 	clust_scarcity = 20*5*20,
 	clust_num_ores = 350,
 	clust_size     = 10,
@@ -254,9 +253,9 @@ minetest.register_ore({
 
 minetest.register_ore({
 	ore_type       = "scatter",
-	ore            = "hades_nodes:gravel",
+	ore            = "default:gravel",
 	ore_param2     = 128,
-	wherein        = "hades_nodes:stone",
+	wherein        = "default:stone",
 	clust_scarcity = 20*10*20,
 	clust_num_ores = 500,
 	clust_size     = 10,
